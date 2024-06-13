@@ -1,14 +1,14 @@
-# Use an official Tomcat image as the base image
-FROM tomcat:9-jdk11-openjdk-slim
+# Use an official OpenJDK runtime as a parent image
+FROM openjdk:11-jre-slim
 
-# Copy the WAR file from your local directory into the container at the Tomcat webapps directory
-COPY target/jenkinsExampleApp-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/jenkinsExampleApp.war
+# Set the working directory in the container
+WORKDIR /app
 
-# Expose the port the Tomcat server will listen on
+# Copy the JAR file from the target directory to the container
+COPY target/jenkinsExampleApp-0.0.1-SNAPSHOT.jar app.jar
+
+# Make port 9090 available to the world outside this container
 EXPOSE 9090
 
-# Change Tomcat's port to 9090
-RUN sed -i 's/port="8080"/port="9090"/' /usr/local/tomcat/conf/server.xml
-
-# Command to run the Tomcat server when the container starts
-CMD ["catalina.sh", "run"]
+# Run the JAR file
+ENTRYPOINT ["java", "-jar", "app.jar"]
