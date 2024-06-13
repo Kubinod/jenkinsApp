@@ -9,8 +9,8 @@ FROM tomcat:9-jdk11-openjdk-slim
 
 # Expose the port the Tomcat server will listen on
 EXPOSE 9090
-ADD target/jenkinsExampleApp.war jenkinsExampleApp.war
-ENTRYPOINT ["java","-war","/jenkinsExampleApp.war"]
+ADD target/jenkinsExampleApp-0.0.1-SNAPSHOT.war jenkinsExampleApp-0.0.1-SNAPSHOT.war
+ENTRYPOINT ["java","-war","/jenkinsExampleApp-0.0.1-SNAPSHOT.war"]
 
 # Command to run the Tomcat server when the container starts
 #CMD ["catalina.sh", "run"]
