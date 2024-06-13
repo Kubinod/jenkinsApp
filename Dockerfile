@@ -8,7 +8,7 @@ COPY target/jenkinsExampleApp-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/jenki
 EXPOSE 9090
 
 # Change Tomcat's port to 9090
-RUN sed -i 's/port="8080"/port="9090"/' /usr/local/tomcat/conf/server.xml
+RUN sed -i 's/port="8080"/port="9095"/' /usr/local/tomcat/conf/server.xml
 
 # Command to run the Tomcat server when the container starts
 CMD ["catalina.sh", "run"]
