@@ -11,6 +11,8 @@ EXPOSE 9090
 RUN sed -i 's/port="8080"/port="9090"/' /usr/local/tomcat/conf/server.xml
 
 # Command to run the Tomcat server when the container starts
-#CMD ["catalina.sh", "run"]
+CMD ["catalina.sh", "run"]
 # Run the JAR file
-ENTRYPOINT ["java", "-war", "jenkinsExampleApp.jar"]
+#ENTRYPOINT ["java", "-war", "jenkinsExampleApp.jar"]
+
+CMD["startup.sh", "run"]
