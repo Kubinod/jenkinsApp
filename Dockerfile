@@ -15,4 +15,4 @@ CMD ["catalina.sh", "run"]
 # Run the JAR file
 #ENTRYPOINT ["java", "-war", "jenkinsExampleApp.jar"]
 
-CMD["startup.sh", "run"]
+CMD ["startup.sh", "run"]
