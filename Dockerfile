@@ -1,5 +1,5 @@
 # Use an official Tomcat image as the base image
-FROM tomcat:9-jdk17-openjdk-slim
+FROM tomcat:9-jdk11-openjdk-slim
 
 # Copy the WAR file from your local directory into the container at the Tomcat webapps directory
 COPY target/jenkinsExampleApp-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/jenkinsExampleApp.war
